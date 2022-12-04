@@ -19,9 +19,7 @@ const Home = () => {
 
     const [toggleSidebar, setToggleSidebar] = useState(false);
     const [user, setUser] = useState(null);
-
     const scrollRef = useRef(null);
-
     const userInfo = fetchUser();
 
     useEffect(() => {
