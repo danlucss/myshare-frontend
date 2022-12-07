@@ -31,10 +31,11 @@ const Feed = () => {
             });
         }
     }, [categoryId]);
+    console.log(pins)
 
     const categoryName = categoryId || "new";
 
-    if (loading) return <Spinner msg={"We are adding ${categoryName} ideas to your feed!"} />;
+    if (loading) return <Spinner msg={`We are adding ${categoryName} ideas to your feed!`} />;
 
     return <div>
         {pins && <MasonryLayout pins={pins} />}

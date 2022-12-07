@@ -3,6 +3,7 @@ import { RiHomeFill } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 
 import logoNoBg from "../../assets/logo-nobg.png";
+import { categories } from "../../utils/data";
 
 const Sidebar = ({ user, closeToggle }) => {
     const isNotActiveStyle =
@@ -10,15 +11,7 @@ const Sidebar = ({ user, closeToggle }) => {
     const isActiveStyle =
         "flex items-center  px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out";
 
-    const categories = [
-        { name: "Animals" },
-        { name: "Poems" },
-        { name: "Art" },
-        { name: "Coding" },
-        { name: "Nature" },
-        { name: "Books" },
-        { name: "Music" },
-    ];
+
 
     const handleCloseSidebar = () => {
         if (closeToggle) {

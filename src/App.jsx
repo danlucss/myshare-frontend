@@ -9,9 +9,9 @@ const App = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
+        const user = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
 
-        if (!User) navigate('/login');
+        if (!user) navigate('/login');
     }, []);
 
     return (
