@@ -8,7 +8,7 @@ const GoogleButtonLogin = () => {
     const navigate = useNavigate();
     const login = useGoogleLogin({
         onSuccess: codeResponse => {
-            console.log(codeResponse.profileObj);
+
             localStorage.setItem("user", JSON.stringify(codeResponse.profileObj));
 
             const { name, googleID, imageUrl } = codeResponse.profileObj;

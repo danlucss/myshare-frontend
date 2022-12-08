@@ -21,7 +21,7 @@ const PinDetail = ({ user }) => {
         if (query) {
             client.fetch(`${query}`).then((data) => {
                 setPinDetail(data[0]);
-                console.log(data);
+
                 if (data[0]) {
                     const query1 = pinDetailsMorePinQuery(data[0]);
                     client.fetch(query1).then((res) => {
@@ -58,6 +58,7 @@ const PinDetail = ({ user }) => {
             <Spinner message="Showing pin" />
         );
     }
+
 
     return (
         <>

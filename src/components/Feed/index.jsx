@@ -13,25 +13,31 @@ const Feed = () => {
 
     useEffect(() => {
 
+        const fetchPins = async () => {
+            if (categoryId) {
+                setLoading(true);
+                const query = searchQuery(categoryId);
 
-        if (categoryId) {
-            setLoading(true);
-            const query = searchQuery(categoryId);
+                await client.fetch(query).then(data => {
 
-            client.fetch(query).then(data => {
-                setPins(data);
-                setLoading(false);
-            });
-        } else {
-            setLoading(true);
+                    setPins(data);
+                    setLoading(false);
 
-            client.fetch(feedQuery).then(data => {
-                setPins(data);
-                setLoading(false);
-            });
-        }
+                });
+            } else {
+                setLoading(true);
+
+                await client.fetch(feedQuery).then(data => {
+
+                    setPins(data);
+                    setLoading(false);
+
+                });
+            }
+        };
+        fetchPins();
     }, [categoryId]);
-    console.log(pins)
+
 
     const categoryName = categoryId || "new";
 

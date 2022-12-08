@@ -70,6 +70,7 @@ const CreatePin = ({ user }) => {
 
             client.create(doc)
                 .then(() => {
+
                     navigate('/');
                 })
 
@@ -78,7 +79,7 @@ const CreatePin = ({ user }) => {
 
             setTimeout(() => {
                 setFields(false);
-                // window.location.reload()
+                window.location.reload()
 
             }, 3000);
         }
